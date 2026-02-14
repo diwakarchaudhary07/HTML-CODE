@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Copy Code Example</title>
+    <style>
+        .code-box {
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            position: relative;
+            font-family: monospace;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background: #4285f4;
+            /* Google blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="code-box" id="codeBox">
+        <pre>
+&lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;p&gt;This is a sample code snippet.&lt;/p&gt;
+</pre>
+        <button class="copy-btn" onclick="copyCode()">Copy</button>
+    </div>
+
+    <script>
+        function copyCode() {
+            // Get the text inside <pre>
+            const codeText = document.querySelector("#codeBox pre").innerText;
+            // Copy to clipboard
+            navigator.clipboard.writeText(codeText).then(() => {
+                alert("Code copied!");
+            });
+        }
+    </script>
+
+</body>
+
+</html>
