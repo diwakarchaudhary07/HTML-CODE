@@ -1,0 +1,175 @@
+/* What is Position in CSS?
+
+
+Definition -:
+             The position property specifies how an element  
+             is positioned in a webpage.
+
+Types of Position
+1. static  (Default)
+2. relative
+3. absolute
+4. fixed
+5. Sticky */
+
+
+
+/* <------------------------------------------------------------------------------------------------ */
+
+
+
+
+/* position: static (Default) */
+
+
+/* Definition ->
+              Static is the default position.
+
+->Elements follow normal document flow.
+->Top, left, right, bottom do NOT work.
+Example */
+
+
+/* <!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+ position: static;
+ background: lightblue;
+ top: 50px; /* This will NOT work */
+/* }
+</style>
+</head>
+<body>
+
+<div class="box">Static Box</div>
+
+</body>
+</html> */
+
+/* 📌 It behaves normally. No movement. */
+/* <--------------------------------------------------------------------------------------------------- */
+
+
+/* position: relative */
+/* Definition
+            -> Moves element relative to its original position.
+            -> Top, left, right, bottom WILL work.
+            -> Space remains reserved. */
+
+/* Example
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+ position: relative;
+ left: 50px;
+ top: 20px;
+ background: lightgreen;
+}
+</style>
+</head>
+<body>
+
+<div class="box">Relative Box</div>
+
+</body>
+</html> */
+
+/*  It shifts from original position but keeps its space. */
+/* <----------------------------------------------------------------------------------------------- */
+
+
+
+/* position: absolute */
+/* Definition
+          -> Moves element relative to nearest positioned parent.
+          -> If no positioned parent, it uses body.
+          -> Space is NOT reserved.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.parent {
+ position: relative;
+ height: 200px;
+ border: 2px solid black;
+}
+
+.child {
+ position: absolute;
+ top: 20px;
+ right: 20px;
+ background: orange;
+}
+</style>
+</head>
+<body>
+
+<div class="parent">
+ <div class="child">Absolute Box</div>
+</div>
+
+</body>
+</html>
+
+📌 It removes element from normal flow. */
+
+/* <------------------------------------------------------------------------------------------------- */
+
+
+
+
+/* 
+
+position: sticky
+Definition
+           -> Acts like relative until a scroll limit is reached.
+           -> Then it becomes fixed.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.header {
+ position: sticky;
+ top: 0;
+ background: yellow;
+ padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">Sticky Header</div>
+
+<p style="height:2000px;">
+Scroll down to see sticky effect.
+</p>
+
+</body>
+</html>
+
+📌 It sticks to top when scrolling.
+<------------------------------------------------------------------------------------------------>
+
+
+
+
+-----------------------------------Quick Comparison Table-----------------------------------------------
+
+
+Position              Moves?            Space Reserved?        Scroll Behavior
+
+ static              ❌ No              ✅ Yes                Normal
+
+ relative             ✅ Yes             ✅ Yes                Normal
+
+ absolute             ✅ Yes             ❌ No                 Normal
+
+ fixed                ✅ Yes             ❌ No                Fixed on screen
+
+ sticky               ✅ Yes             ✅ Yes               Sticks on scroll
