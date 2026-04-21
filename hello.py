@@ -1,0 +1,5 @@
+print ("diwakar")
+print ("hello")
+print ("hello world")
+print ("radhe-radhe")
+print ("ram-ram")
