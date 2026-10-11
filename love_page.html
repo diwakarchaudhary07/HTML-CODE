@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diwakar ❤️ Muskan</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        overflow: hidden;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #200018, #780044, #ff477e);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 600px;
+        padding: 30px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(255, 40, 120, 0.35);
+        backdrop-filter: blur(8px);
+        z-index: 2;
+      }
+
+      h1 {
+        font-size: clamp(30px, 7vw, 48px);
+        margin-bottom: 12px;
+        animation: glow 2s infinite alternate;
+      }
+
+      .names {
+        font-size: clamp(25px, 6vw, 38px);
+        font-weight: bold;
+        margin: 25px 0;
+      }
+
+      .name1 {
+        display: inline-block;
+        animation: flyLeft 3s ease-in-out infinite alternate;
+      }
+
+      .name2 {
+        display: inline-block;
+        animation: flyRight 3s ease-in-out infinite alternate;
+      }
+
+      .heart {
+        display: inline-block;
+        color: #ff1744;
+        animation: heartbeat 0.8s infinite;
+        margin: 0 8px;
+      }
+
+      p {
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      button {
+        margin-top: 25px;
+        padding: 14px 25px;
+        border: none;
+        border-radius: 50px;
+        background: #ff1744;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 0 20px rgba(255, 23, 68, 0.6);
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.08);
+        background: #ff5c8a;
+      }
+
+      #shayari {
+        margin-top: 25px;
+        font-size: 18px;
+        line-height: 1.9;
+        white-space: pre-line;
+        min-height: 90px;
+      }
+
+      .floating-heart {
+        position: absolute;
+        bottom: -40px;
+        color: #ffb6d0;
+        animation: floatUp linear forwards;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 8px #ff8aaa;
+        }
+        to {
+          text-shadow:
+            0 0 25px #fff,
+            0 0 40px #ff1744;
+        }
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.4);
+        }
+      }
+
+      @keyframes flyLeft {
+        from {
+          transform: translateX(-12px) rotate(-3deg);
+        }
+        to {
+          transform: translateX(8px) rotate(3deg);
+        }
+      }
+
+      @keyframes flyRight {
+        from {
+          transform: translateX(12px) rotate(3deg);
+        }
+        to {
+          transform: translateX(-8px) rotate(-3deg);
+        }
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0;
+        }
+        15% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-115vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>💖 A Love Story 💖</h1>
+
+      <p>Made with love, just for two hearts</p>
+
+      <div class="names">
+        <span class="name1">your_Name</span>
+        <span class="heart">❤️</span>
+        <span class="name2">Partner_Name</span>
+      </div>
+
+      <p>
+        Two names, one beautiful feeling.<br />
+        Two hearts, one special connection. 💕
+      </p>
+
+      <button onclick="showShayari()">💌 Click for Love Shayari</button>
+
+      <div id="shayari">Your special love shayari is waiting... ❤️</div>
+    </div>
+
+    <script>
+      const shayaris = [
+        `तेरी मुस्कान मेरी पहचान बन जाए,
+तेरा साथ मेरी जान बन जाए।
+दीवाकर की हर दुआ में हो मुस्कान,
+और मुस्कान ही उसकी पूरी दुनिया बन जाए। ❤️`,
+
+        `चाँद से प्यारी तेरी बात लगती है,
+तेरे साथ हर मुलाकात खास लगती है।
+दीवाकर के दिल की बस इतनी सी चाहत है,
+मुस्कान, तू हमेशा मेरे पास रहे। 💖`,
+
+        `ना दौलत चाहिए, ना कोई महल चाहिए,
+मुझे बस तेरा प्यारा सा साथ चाहिए।
+दीवाकर के दिल में बस मुस्कान रहे,
+मेरी हर सुबह में तेरा नाम रहे। 🌹`,
+
+        `तुम हँसो तो मेरी दुनिया सँवर जाए,
+तुम रूठो तो दिल मेरा घबराए।
+मुस्कान, तुम मेरी कहानी का वो हिस्सा हो,
+जिसके बिना हर खुशी अधूरी रह जाए। 💕`,
+
+        `एक नाम है दीवाकर, एक नाम है मुस्कान,
+दोनों के लिए प्यार बने सबसे सुंदर अरमान।
+हर दिन खुशियों से भरा रहे,
+दोनों का रिश्ता हमेशा प्यारा रहे। ❤️`,
+      ];
+
+      let lastIndex = -1;
+
+      function showShayari() {
+        let index;
+
+        do {
+          index = Math.floor(Math.random() * shayaris.length);
+        } while (shayaris.length > 1 && index === lastIndex);
+
+        lastIndex = index;
+
+        const box = document.getElementById("shayari");
+        box.style.opacity = 0;
+
+        setTimeout(() => {
+          box.textContent = shayaris[index];
+          box.style.transition = "opacity 0.7s";
+          box.style.opacity = 1;
+        }, 250);
+
+        createHearts(18);
+      }
+
+      function createHearts(count = 1) {
+        for (let i = 0; i < count; i++) {
+          const heart = document.createElement("div");
+          heart.className = "floating-heart";
+          heart.textContent = ["❤️", "💖", "💕", "💗", "💘"][
+            Math.floor(Math.random() * 5)
+          ];
+
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.fontSize = 18 + Math.random() * 25 + "px";
+          heart.style.animationDuration = 4 + Math.random() * 5 + "s";
+
+          document.body.appendChild(heart);
+
+          setTimeout(() => heart.remove(), 9000);
+        }
+      }
+
+      // Floating hearts appear continuously
+      setInterval(() => createHearts(2), 700);
+    </script>
+  </body>
+</html>
